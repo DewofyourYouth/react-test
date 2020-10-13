@@ -99,9 +99,15 @@ function App() {
 
 const Loading = () => <p>Users are loading...</p>;
 
+// You can change anything you want, make as many files and folders and you want - make things pretty with fancy css :) - do whatever you want - the world is your oyster!
 
-// refactor this component
-// for bonus points implement redux
+// Here is you mission if you choose to accept it.
+
+// refactor this component:
+//  1) make the form work
+//  2) clean up the code
+//  3) make sure there are no "compiler" errors
+//  4) for bonus points implement redux to make the changes persistent
 const UserTable = ({ users }) => (
   <div className="col-12">
     <table className="table">
