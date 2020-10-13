@@ -128,6 +128,8 @@ const UserTable = ({ users }) => (
         </tr>
       ))}
     </table>
+    <hr />
+    <h4 className="text-center mb-5">Add User</h4>
     <form>
       <div className="form-row">
         <div className="col">
