@@ -99,7 +99,11 @@ function App() {
 
 const Loading = () => <p>Users are loading...</p>;
 
-// You can change anything you want, make as many files and folders and you want - make things pretty with fancy css :) - do whatever you want - the world is your oyster!
+// You can change anything you want,
+// make as many files and folders and you want!
+// You can even make things pretty with fancy css
+// Although I don't know why you would do that :)
+// The point is: do whatever you want! - the world is your oyster!
 
 // Here is you mission if you choose to accept it.
 
