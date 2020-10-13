@@ -86,7 +86,9 @@ function App() {
       {users ? (
         <div className="row">
           <div className="col-12 jumbotron bg-info">
-            <h1 className="display-3 text-center text-white">Welcome to the Users Table</h1>
+            <h1 className="display-3 text-center text-white">
+              Welcome to the Users Table
+            </h1>
           </div>
           <UserTable users={users} />
         </div>
@@ -99,19 +101,23 @@ function App() {
 
 const Loading = () => <p>Users are loading...</p>;
 
-// You can change anything you want,
-// make as many files and folders and you want!
-// You can even make things pretty with fancy css
-// Although I don't know why you would do that :)
-// The point is: do whatever you want! - the world is your oyster!
+/*
+  You can change anything you want,
+  make as many files and folders and you want!
+  You can even make things pretty with fancy css
+  Although I don't know why you would want do that :)
+  The point is: do whatever you want! - the world is your oyster!
 
-// Here is you mission if you choose to accept it.
+  Here is you mission should you choose to accept it.
 
-// refactor this component:
-//  1) make the form work
-//  2) clean up the code
-//  3) make sure there are no "compiler" errors
-//  4) for bonus points implement redux to make the changes persistent
+  REFACTOR THE "UserTable" COMPONENT:
+  
+  1) make the form work
+  2) clean up the code
+  3) make sure there are no "compiler" errors
+
+  4) BONUS: implement redux to make changes to the list persistent
+*/
 const UserTable = ({ users }) => (
   <div className="col-12">
     <table className="table">
@@ -176,7 +182,9 @@ const UserTable = ({ users }) => (
           />
         </div>
       </div>
-      <button type="submit" class="btn btn-primary mt-3">Sign in</button>
+      <button type="submit" class="btn btn-primary mt-3">
+        Sign in
+      </button>
     </form>
   </div>
 );
