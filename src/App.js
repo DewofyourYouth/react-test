@@ -85,8 +85,8 @@ function App() {
     <div className="container">
       {users ? (
         <div className="row">
-          <div className="col-12 jumbotron">
-            <h1 className="display-3 text">Welcome to the Users Table</h1>
+          <div className="col-12 jumbotron bg-info">
+            <h1 className="display-3 text-center text-white">Welcome to the Users Table</h1>
           </div>
           <UserTable users={users} />
         </div>
