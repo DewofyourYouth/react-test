@@ -117,6 +117,7 @@ const Loading = () => <p>Users are loading...</p>;
   3) make sure there are no "compiler" errors
 
   4) BONUS: implement redux to make changes to the list persistent
+  5) BONUS: make all test suites pass.
 */
 const UserTable = ({ users }) => (
   <div className="col-12">
