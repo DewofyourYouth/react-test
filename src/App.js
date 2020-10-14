@@ -183,7 +183,7 @@ const UserTable = ({ users }) => (
         </div>
       </div>
       <button type="submit" class="btn btn-primary mt-3">
-        Add User
+        Log In
       </button>
     </form>
   </div>
