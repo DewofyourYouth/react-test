@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import UsersTable from "./Components/UsersTable";
+import Form from "./Components/Form";
 
 let payload = [
   {
@@ -78,8 +80,28 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 function App() {
   const [users, setUsers] = useState(null);
   useEffect(() => {
-    sleep(3000).then(() => setUsers(payload));
+    sleep(3000).then(() => {
+      if (!users) {
+        setUsers(payload);
+      }
+    });
   });
+
+  const addNewUser = (data) => {
+    const newUser = {
+      _id: data.id,
+      name: {
+        first: data.firstName,
+        last: data.lastName,
+      },
+      company: data.company,
+      email: data.email,
+      phone: data.phoneNum,
+    };
+    let newUsers = [...users];
+    newUsers.push(newUser);
+    setUsers(newUsers);
+  };
 
   return (
     <div className="container">
@@ -90,7 +112,11 @@ function App() {
               Welcome to the Users Table
             </h1>
           </div>
-          <UserTable users={users} />
+          <div className="col-12">
+            <UsersTable users={users} />
+            <hr />
+            <Form addNewUser={addNewUser} />
+          </div>
         </div>
       ) : (
         <Loading />
@@ -118,75 +144,5 @@ const Loading = () => <p>Users are loading...</p>;
 
   4) BONUS: implement redux to make changes to the list persistent
 */
-const UserTable = ({ users }) => (
-  <div className="col-12">
-    <table className="table">
-      <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Phone #</th>
-      </tr>
-      {users.map((user) => (
-        <tr>
-          <td>
-            {user.name.last}, {user.name.first}
-          </td>
-          <td>
-            <a href={"mailto:" + user.email}>{user.email}</a>
-          </td>
-          <td>{user.phone}</td>
-        </tr>
-      ))}
-    </table>
-    <hr />
-    <h4 className="text-center mb-5">Add User</h4>
-    <form>
-      <div className="form-row">
-        <div className="col">
-          <label for="firstName">First Name</label>
-          <input
-            type="text"
-            className="form-control"
-            id="firstName"
-            name="firstName"
-            aria-describedby="emailHelp"
-          />
-        </div>
-        <div className="col">
-          <label for="lastName">Last Name</label>
-          <input
-            type="text"
-            className="form-control"
-            id="lastName"
-            name="lastName"
-          />
-        </div>
-      </div>
-      <div className="form-row">
-        <div className="col">
-          <label for="email">Email</label>
-          <input
-            type="email"
-            className="form-control"
-            id="email"
-            name="email"
-          />
-        </div>{" "}
-        <div className="col">
-          <label for="phoneNum">Phone Number</label>
-          <input
-            type="text"
-            className="form-control"
-            id="phoneNum"
-            name="phoneNum"
-          />
-        </div>
-      </div>
-      <button type="submit" class="btn btn-primary mt-3">
-        Sign in
-      </button>
-    </form>
-  </div>
-);
 
 export default App;
