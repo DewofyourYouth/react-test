@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-let payload = [
+export let payload = [
   {
     _id: "5f85b364f01cdfb8f4332827",
     name: {
@@ -119,7 +119,7 @@ const Loading = () => <p>Users are loading...</p>;
   4) BONUS: implement redux to make changes to the list persistent
   5) BONUS: make all test suites pass.
 */
-const UserTable = ({ users }) => (
+export const UserTable = ({ users }) => (
   <div className="col-12">
     <table className="table">
       <tr>
